@@ -18,7 +18,7 @@ public class CalculBlackScholes extends Calcul {
 		T = T/365;
 		double K = parametresCalcul.getPrixStrike();
 		double r = parametresCalcul.getTauxSansRisque();
-		double sigma = parametresCalcul.getTauxVolatilité();
+		double sigma = parametresCalcul.getTauxVolatilite();
 		d1 = (1/(sigma*Math.sqrt(T))) * (Math.log(S/K) + (r + (1/2)*Math.pow(sigma, 2))*T); 
 		d2 = d1 - sigma * Math.sqrt(T);
 		

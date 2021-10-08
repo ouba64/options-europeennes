@@ -85,24 +85,18 @@ public class FenetrePrincipale extends JFrame {
 			double prixStrike = getDouble(1);
 			double maturity = getDouble(2);
 			double tauxSansRisque = getDouble(3);
-			double tauxVolatilité = getDouble(4);
+			double tauxVolatilite = getDouble(4);
 
 			int nbEtapes = getInt(5);
 			int nbThreads = getInt(6);
 			int nbSimulationsMax = getInt(7);
 			int incrementation = getInt(8);
 			ParametresCalcul parametresCalcul = new ParametresCalcul(prixSousJacent, prixStrike, maturity,
-					tauxSansRisque, tauxVolatilité, nbEtapes, nbThreads, nbSimulationsMax, incrementation);
+					tauxSansRisque, tauxVolatilite, nbEtapes, nbThreads, nbSimulationsMax, incrementation);
 			lanceCalculs.setParametresCalcul(parametresCalcul);
 			travailEnCours(true);
 			lanceCalculs.lanceCalculs();
-
 			return null;
-		}
-
-		@Override
-		protected void done() {
-			travailEnCours(false);
 		}
 
 		@Override
@@ -126,7 +120,17 @@ public class FenetrePrincipale extends JFrame {
 			afficherResultats(new double[] { callBS, putBS, callMC, putMC });
 			panelGraphique.ajouterPoint(nSimul, callBS, putBS, callMC, putMC);
 		}
+		
+		@Override
+		public void handleResultatCalcul(ResultatCalcul e) {
+			publish(e);
+		}
 
+		@Override
+		protected void done() {
+			travailEnCours(false);
+		}
+		
 		private void travailEnCours(boolean enCours) {
 			panelChargement.showChargement(enCours);
 			btnLancer.setEnabled(!enCours);
@@ -164,20 +168,17 @@ public class FenetrePrincipale extends JFrame {
 			catch (NumberFormatException e) {
 				// custom title, error icon
 				JOptionPane.showMessageDialog(FenetrePrincipale.this,
-						"Votre entrée n'est pas un nombre, Veuillez recommencer", "Erreur de saisie",
+						"Votre entrï¿½e n'est pas un nombre, Veuillez recommencer", "Erreur de saisie",
 						JOptionPane.ERROR_MESSAGE);
 			}
 			return 0;
 		}
 
-		@Override
-		public void handleResultatCalcul(ResultatCalcul e) {
-			publish(e);
-		}
+
 	}
 
 	public FenetrePrincipale() {
-		super("Calcul Option européenne");
+		super("Calcul Option europï¿½enne");
 		Container panel = buildFenetre();
 		setContentPane(panel);
 	}
@@ -231,8 +232,8 @@ public class FenetrePrincipale extends JFrame {
 		panelGauche.add(panelParametres, BorderLayout.NORTH);
 		panelGauche.add(panelResultats, BorderLayout.CENTER);
 
-		ajouterBordure(panelParametres, "Paramètres");
-		ajouterBordure(panelResultats, "Résultats");
+		ajouterBordure(panelParametres, "Paramï¿½tres");
+		ajouterBordure(panelResultats, "Rï¿½sultats");
 
 		/*
 		 * JPanel panelBoutonsEtChargement = new JPanel(new GridBagLayout());

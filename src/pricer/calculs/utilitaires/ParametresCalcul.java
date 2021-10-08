@@ -5,7 +5,7 @@ public class ParametresCalcul {
 	double prixStrike;
 	double maturity;
 	double tauxSansRisque;
-	double tauxVolatilité;
+	double tauxVolatilite;
 	int nbEtapes;
 	int nbThreads;
 	int nbSimulationsMax;
@@ -18,7 +18,7 @@ public class ParametresCalcul {
 		this.prixStrike = 50;
 		this.maturity = 182.625;
 		this.tauxSansRisque = 0.06;
-		this.tauxVolatilité = 0.45;
+		this.tauxVolatilite = 0.45;
 		this.nbEtapes = 1000;
 		this.nbThreads = 10;
 		this.nbSimulationsMax = 100000;
@@ -26,13 +26,13 @@ public class ParametresCalcul {
 	}
 
 	public ParametresCalcul(double prixSousJacent, double prixStrike, double maturity, double tauxSansRisque,
-			double tauxVolatilité, int nbEtapes, int nbThreads, int nbSimulationsMax, int incrementation) {
+			double tauxVolatilite, int nbEtapes, int nbThreads, int nbSimulationsMax, int incrementation) {
 		super();
 		this.prixSousJacent = prixSousJacent;
 		this.prixStrike = prixStrike;
 		this.maturity = maturity;
 		this.tauxSansRisque = tauxSansRisque;
-		this.tauxVolatilité = tauxVolatilité;
+		this.tauxVolatilite = tauxVolatilite;
 		this.nbEtapes = nbEtapes;
 		this.nbThreads = nbThreads;
 		this.nbSimulationsMax = nbSimulationsMax;
@@ -42,7 +42,7 @@ public class ParametresCalcul {
 	public ParametresCalcul duplicate() {
 		ParametresCalcul p = this;
 		ParametresCalcul pc = new ParametresCalcul(p.getPrixSousJacent(), p.getPrixStrike(), p.getMaturity(),
-				p.getTauxSansRisque(), p.getTauxVolatilité(), p.getNbEtapes(), p.getNbThreads(),
+				p.getTauxSansRisque(), p.getTauxVolatilite(), p.getNbEtapes(), p.getNbThreads(),
 				Math.round(p.getNbSimulationsMax() / p.getNbThreads()), p.getIncrementation());
 		return pc;
 	}
@@ -79,12 +79,12 @@ public class ParametresCalcul {
 		this.tauxSansRisque = tauxSansRisque;
 	}
 
-	public double getTauxVolatilité() {
-		return tauxVolatilité;
+	public double getTauxVolatilite() {
+		return tauxVolatilite;
 	}
 
-	public void setTauxVolatilité(double tauxVolatilité) {
-		this.tauxVolatilité = tauxVolatilité;
+	public void setTauxVolatilite(double tauxVolatilite) {
+		this.tauxVolatilite = tauxVolatilite;
 	}
 
 	public int getNbEtapes() {
@@ -122,7 +122,7 @@ public class ParametresCalcul {
 	@Override
 	public String toString() {
 		return "ParametresCalcul [prixSousJacent=" + prixSousJacent + ", prixStrike=" + prixStrike + ", maturity="
-				+ maturity + ", tauxSansRisque=" + tauxSansRisque + ", tauxVolatilité=" + tauxVolatilité + ", nbEtapes="
+				+ maturity + ", tauxSansRisque=" + tauxSansRisque + ", tauxVolatilitï¿½=" + tauxVolatilite + ", nbEtapes="
 				+ nbEtapes + ", nbThreads=" + nbThreads + ", nbSimulationsMax=" + nbSimulationsMax + ", incrementation="
 				+ incrementation + "]";
 	}

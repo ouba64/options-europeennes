@@ -15,8 +15,8 @@ public class PanelParametres extends JPanel {
 
 	JTextField[] textFields;
 	public static final String[] labels = { "Prix sous-jacent: ", "Prix strike: ", "Maturity: ", "Taux sans risque: ",
-			"Taux volatilité: ", "(MC) Nombre d'étapes: ", "(MC) Nombre de threads: ",
-			"(MC) Nombre de simulations max: ", "(MC) Incrémentation: " };
+			"Taux volatilitÃ©: ", "(MC) Nombre d'Ã©tapes: ", "(MC) Nombre de threads: ",
+			"(MC) Nombre de simulations max: ", "(MC) IncrÃ©mentation: " };
 
 	public PanelParametres() {
 		textFields = new JTextField[labels.length];
@@ -44,7 +44,7 @@ public class PanelParametres extends JPanel {
 		textFields[1].setText(String.valueOf(parametresCalcul.getPrixStrike()));
 		textFields[2].setText(String.valueOf(parametresCalcul.getMaturity()));
 		textFields[3].setText(String.valueOf(parametresCalcul.getTauxSansRisque()));
-		textFields[4].setText(String.valueOf(parametresCalcul.getTauxVolatilité()));
+		textFields[4].setText(String.valueOf(parametresCalcul.getTauxVolatilite()));
 		textFields[5].setText(String.valueOf(parametresCalcul.getNbEtapes()));
 		textFields[6].setText(String.valueOf(parametresCalcul.getNbThreads()));
 		textFields[7].setText(String.valueOf(parametresCalcul.getNbSimulationsMax()));

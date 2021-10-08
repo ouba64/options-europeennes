@@ -30,7 +30,7 @@ public class CalculMonteCarlo extends Calcul {
 		T = T/365;
 		double K = parametresCalcul.getPrixStrike();
 		double r = parametresCalcul.getTauxSansRisque();
-		double sigma = parametresCalcul.getTauxVolatilité();
+		double sigma = parametresCalcul.getTauxVolatilite();
 		int nSimulations = parametresCalcul.getNbSimulationsMax();
 		int nSteps = parametresCalcul.getNbEtapes();
 
